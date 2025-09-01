@@ -23,7 +23,7 @@ func TestGetAPIKey_Valid(t *testing.T) {
 
 func TestGetAPIKey_Invalid_EmptyAuthHeader(t *testing.T) {
 	header := http.Header{}
-	
+
 	returnedKey, err := GetAPIKey(header)
 	require.Error(t, err)
 	assert.Equal(t, "", returnedKey)
