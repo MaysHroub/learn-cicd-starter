@@ -37,10 +37,7 @@ jobs:
       - name: Check code formatting
         run: test -z `go fmt ./...`
 
-      - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
-
-      - name: Run linting for code
-        run: staticcheck ./...; test $? -eq 0
-
+      - uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
 
