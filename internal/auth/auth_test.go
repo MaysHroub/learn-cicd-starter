@@ -48,6 +48,6 @@ func TestGetAPIKey_Invalid_NoApiKeyWordInHeaderValue(t *testing.T) {
 	header.Add(headerKey, headerVal)
 
 	returnedKey, err := GetAPIKey(header)
-	require.NoError(t, err)
+	require.Error(t, err)
 	assert.Equal(t, "", returnedKey)
 }
