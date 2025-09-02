@@ -28,7 +28,7 @@ jobs:
         run: go install github.com/pressly/goose/v3/cmd/goose@latest   
 
       - name: Run db migration
-        run: goose turso  ${{ secrets.DATABASE_URL }} up
+        run: cd sql/schema; goose turso  ${{ secrets.DATABASE_URL }} up
 
       - id: auth
         uses: google-github-actions/auth@v2
